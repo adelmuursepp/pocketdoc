@@ -20,7 +20,7 @@ function Dashboard() {
     <div className="max-w-2xl mx-auto">
       <div className="flex flex-col gap-3 mt-[100px] mx-10 items-start">
         <h1 className="font-bold text-2xl">Dashboard</h1>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 mb-5">
           {recommendations ? (
             recommendations.map((step, index) => (
               <div key={index} className="bg-[#6359BC] p-2 rounded">
