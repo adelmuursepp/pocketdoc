@@ -1,12 +1,15 @@
 from google_sheets import read_google_sheet
 from utils.get_database import get_database
 from utils.fetch_recommendation import fetch_recommendation
+from utils.fetch_urgency import fetch_urgency
+from utils.save_admin_summary import save_admin_summary
 
 def process_data():
     res = read_google_sheet()
     last_row = res[-1]
     time = last_row[0] # Retrieves the time col in table
     summary = last_row[3] # Retrieves the summary col in table
+    name = last_row[1] # Retrieves the name col in table
 
     dbname = get_database()
     transcript_collection = dbname["transcript"]
@@ -25,5 +28,9 @@ def process_data():
             recommendation_string = fetch_recommendation(summary)
             recommendation_collection.insert_one({"recc": recommendation_string})
             print("RECOMMENDATION UPDATED")
+
+            urgency = fetch_urgency(summary)
+            save_admin_summary(name, time, urgency, summary)
+            print("URGENCY UPDATED")
         else:
             print("NO UPDATES")

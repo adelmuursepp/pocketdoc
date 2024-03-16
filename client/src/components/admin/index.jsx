@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
 
 function Admin() {
-  const [name, setName] = useState("John Doe");
-  const [age, setAge] = useState(62);
-  const [gender, setGender] = useState("Male");
-  const [symptoms, setSymptoms] = useState("Fever, Cough");
+  const [adminSummary, setAdminSummary] = useState([]);
+
+  async function fetchAdminSummary() {
+    const res = await fetch("http://127.0.0.1:5000/admin-summary");
+    const data = await res.json();
+    setAdminSummary(data);
+  }
+
+  useEffect(() => {
+    fetchAdminSummary();
+  }, []);
 
   const options = [
     { value: "Daily", label: "Daily" },
@@ -59,51 +66,24 @@ function Admin() {
             }}
           />
         </div>
-        <div className="w-full bg-[#6359BC] p-5 flex flex-col gap-3 rounded">
-          <div className="flex flex-col">
-            <label htmlFor="name" className="text-lg">
-              Name
-            </label>
-            <input
-              className="bg-[#A19BD3] rounded-sm pl-1"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="age" className="text-lg">
-              Age
-            </label>
-            <input
-              className="bg-[#A19BD3] rounded-sm pl-1"
-              id="age"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="gender" className="text-lg">
-              Gender
-            </label>
-            <input
-              className="bg-[#A19BD3] rounded-sm pl-1"
-              id="gender"
-              value={gender}
-              onChange={(e) => setGender(e.target.value)}
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="symptoms" className="text-lg">
-              Symptoms
-            </label>
-            <input
-              className="bg-[#A19BD3] rounded-sm pl-1"
-              id="symptoms"
-              value={symptoms}
-              onChange={(e) => setSymptoms(e.target.value)}
-            />
-          </div>
+        <div className="flex flex-col gap-3">
+          {adminSummary ? (
+            adminSummary.map((summary, index) => (
+              <div
+                key={index}
+                className="w-full bg-[#6359BC] p-5 flex flex-col gap-3 rounded"
+              >
+                <div className="flex justify-between">
+                  <p className="text-lg">{summary.name}</p>
+                  <p className="text-lg">{summary.urgency}</p>
+                </div>
+                <p className="text-lg italic">{summary.time}</p>
+                <p className="text-lg">{summary.summary}</p>
+              </div>
+            ))
+          ) : (
+            <p className="text-lg">Loading...</p>
+          )}
         </div>
       </div>
     </div>
