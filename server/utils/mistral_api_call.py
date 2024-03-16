@@ -5,7 +5,6 @@ import os
 load_dotenv()
 
 # Mistral API call setup
-
 mistral_api_key = os.environ["MISTRAL_API_KEY"]
 model = "mistral-tiny"
 client = MistralClient(api_key=mistral_api_key)
