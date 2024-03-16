@@ -13,7 +13,7 @@ client = MistralClient(api_key=mistral_api_key)
 
 def fetch_recommendation(summary):
     messages = [
-        ChatMessage(role="user", content="You are a medical expert. Your task is to provide concrete suggestions on the text. When presented with the text, come up with a numbered list of 4 solutions, each solution being less than 20 words. {summary}")
+        ChatMessage(role="user", content="Your task is to provide specific suggestions to heal and improve the health of the user with home remedies and potential adjustments in lifestyle, do NOT be generic. Use this information how user feels: {summary}. When presented with the text, come up with a numbered list of 4 solutions, each solution being less than 20 words.")
     ]
 
     chat_response = client.chat(
