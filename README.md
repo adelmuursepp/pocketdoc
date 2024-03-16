@@ -1,4 +1,4 @@
-# pocketdoc
+# PocketDoc
 Facilitating the appointment process through AI
 
 ## 💡Inspiration
@@ -13,6 +13,7 @@ We also built an admin dashboard for the doctors themselves, who can toggle opti
 
 ## ⚙️ How we built it
 We constructed the front end with React, JavaScript, and TailwindCSS. We built the backend with Python, Flask, and MongoDB. We also leveraged Thoughtly for the AI agent communication, Zapier for integration between the agent and the transcript, and Google Cloud to grab the data in our backend. Finally, we used OpenAI's API for providing recommendations based on the user transcript. The entire application is deployed on Heroku.
+
 ![Screenshot 2024-03-16 at 5 21 30 AM](https://github.com/Ezzhingy/pocketdoc/assets/86681988/c75244b0-c6b5-41ce-bfd7-7d2013e9e746)
 
 ## 🚧 Challenges we ran into
