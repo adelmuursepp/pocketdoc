@@ -27,6 +27,3 @@ def process_data():
             print("RECOMMENDATION UPDATED")
         else:
             print("NO UPDATES")
-
-    
-    

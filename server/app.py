@@ -5,10 +5,14 @@ from google_sheets import read_google_sheet
 from utils.process_data import process_data
 from utils.get_database import get_database
 from routes.recommended_actions_route import recommended_actions_route
+from flask_cors import CORS
+
+from utils.fetch_recommendation import fetch_recommendation
 
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
 app.app_context().push()
 
 app.register_blueprint(recommended_actions_route)

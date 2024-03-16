@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Homepage() {
+function Personal() {
   const [name, setName] = useState("John Doe");
   const [age, setAge] = useState(25);
   const [gender, setGender] = useState("Male");
@@ -61,4 +61,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default Personal;
