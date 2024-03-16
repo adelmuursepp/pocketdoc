@@ -13,11 +13,6 @@ app.register_blueprint(recommended_actions_route)
 
 scheduler = BackgroundScheduler(daemon=True)
 
-def check_google_sheets():
-    # Function to fetch and process data from Google Sheets
-    data = read_google_sheet()
-    print(data)  # Example action: print the data. Replace this with your actual processing logic.
-
 # Schedule the `check_google_sheets` function to run periodically
 scheduler.add_job(process_data, 'interval', minutes=0.1) 
 
