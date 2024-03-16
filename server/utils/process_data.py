@@ -18,6 +18,8 @@ def process_data():
             collection_name.delete_many({})
             collection_name.insert_one({"time": time, "summary": summary})
             print("DELETED AND UPDATED")
+        else:
+            print("NO UPDATES")
 
     
     
