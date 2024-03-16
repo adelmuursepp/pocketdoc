@@ -1,4 +1,5 @@
 from mistralai.client import MistralClient
+from mistralai.models.chat_completion import ChatMessage
 from dotenv import load_dotenv
 import os
 
@@ -17,6 +18,7 @@ def fetch_data(summary):
     chat_response = client.chat(
         model=model,
         messages=messages,
+        safe_mode=True
     )
     message = chat_response.choices[0].message.content
     return(jsonify(message))
