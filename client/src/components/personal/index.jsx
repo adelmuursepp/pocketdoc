@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function Personal() {
   const [name, setName] = useState("John Doe");
-  const [age, setAge] = useState(25);
+  const [age, setAge] = useState(62);
   const [gender, setGender] = useState("Male");
   const [symptoms, setSymptoms] = useState("Fever, Cough");
 
