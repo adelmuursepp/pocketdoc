@@ -9,12 +9,14 @@ from routes.recommended_actions_route import recommended_actions_route
 load_dotenv()
 
 app = Flask(__name__)
+app.app_context().push()
+
 app.register_blueprint(recommended_actions_route)
 
 scheduler = BackgroundScheduler(daemon=True)
 
 # Schedule the `check_google_sheets` function to run periodically
-scheduler.add_job(process_data, 'interval', minutes=1, max_instances=2) 
+scheduler.add_job(process_data, 'interval', seconds=6, max_instances=2) 
 
 @app.route('/')
 def home():
