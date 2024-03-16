@@ -20,7 +20,7 @@ def read_google_sheet():
     sheet = service.spreadsheets()
     result = sheet.values().get(spreadsheetId=SHEET_ID, range=RANGE_NAME).execute()
     values = result.get('values', [])
-    print(values)
+    # print(values)
 
     if not values:
         return 'No data found.'
