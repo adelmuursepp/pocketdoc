@@ -14,12 +14,7 @@ app.register_blueprint(recommended_actions_route)
 scheduler = BackgroundScheduler(daemon=True)
 
 # Schedule the `check_google_sheets` function to run periodically
-scheduler.add_job(process_data, 'interval', minutes=0.1) 
-
-@app.route('/get-calls-summary')
-def get_data_from_google_sheets():
-    data = read_google_sheet()
-    return jsonify(data)
+scheduler.add_job(process_data, 'interval', minutes=1, max_instances=2) 
 
 @app.route('/')
 def home():
