@@ -6,6 +6,7 @@ function Dashboard() {
   async function fetchRecommendations() {
     const res = await fetch("http://127.0.0.1:5000/recommended-actions");
     const data = await res.json();
+    console.log(data);
     const stepsRegex = /\d+\.\s/g;
     const steps = data.recommendations.split(stepsRegex);
     steps.shift();

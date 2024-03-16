@@ -8,3 +8,4 @@ google-auth-oauthlib
 APScheduler
 mistralai
 flask-cors
+openai
