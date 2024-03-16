@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  background-color: #bab6de;
+  background: linear-gradient(to right, #bab6de, #7770be);
+  font-family: "Urbanist", sans-serif;
+  color: white;
+}
