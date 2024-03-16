@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 function Personal() {
-  const [name, setName] = useState("John Doe");
+  const [name, setName] = useState("Mariam");
   const [age, setAge] = useState(62);
-  const [gender, setGender] = useState("Male");
+  const [gender, setGender] = useState("Female");
   const [symptoms, setSymptoms] = useState("Fever, Cough");
 
   return (
