@@ -12,6 +12,7 @@ import Homepage from "./components/homepage/index.jsx";
 import Personal from "./components/personal/index.jsx";
 import Dashboard from "./components/dashboard/index.jsx";
 import pocketDocLogo from "./assets/pocketdoc.png";
+import Admin from "./components/admin/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "admin",
+        element: <Admin />,
       },
     ],
   },
