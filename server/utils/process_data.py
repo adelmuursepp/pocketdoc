@@ -1,4 +1,4 @@
-from google_sheets import read_google_sheet
+from utils.google_sheets import read_google_sheet
 from utils.get_database import get_database
 from utils.fetch_recommendation import fetch_recommendation
 from utils.fetch_urgency import fetch_urgency
