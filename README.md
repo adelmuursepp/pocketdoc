@@ -3,6 +3,7 @@
 Facilitating the appointment process through AI
 
 Check out our [technical demo video](https://www.youtube.com/watch?v=iepbyKEVYv4)!
+
 [Try it out yourself!](https://65f5ea72cdbd16f01b5324d7--transcendent-quokka-1b2700.netlify.app/)!
 
 ## 💡Inspiration
